@@ -65,7 +65,6 @@ class App extends Component {
 
     let persons = null;
 
-
     if(this.state.showPersons ){
       persons = <Persons 
           persons={this.state.persons}
@@ -73,8 +72,6 @@ class App extends Component {
           changed={this.nameChangedHandler} />
       
     }
-
-
     return (
       
         <div className={classes.App}>
