@@ -6,6 +6,19 @@ const cockpit = (props) => {
 useEffect(()=> {
     console.log('[Cockpit.js] useEffect');
     //Http request can be added here.
+    setTimeout(() => {
+        alert('Saved data to cloud!')
+    },1000);
+    return () => {
+        console.log('[Cockpit.js] cleanup work in useEffect')
+    }
+}, []);
+
+useEffect(() => {
+    console.log('[Cockpit.js] 2nd useEffect');
+    return () => {
+        console.log('[Cockpit.js] cleanup work in 2nd useEffect')
+    };
 });
 
 
@@ -14,10 +27,10 @@ useEffect(()=> {
     if(props.showPersons) {
         btnClass = classes.Red;
     }
-    if(props.persons.length <= 2) {
+    if(props.personsLength <= 2) {
       assignedClasses.push(classes.red); //classes = ['red']
     }
-    if(props.persons.length <=1){
+    if(props.personsLength <=1){
       assignedClasses.push(classes.bold); //classes = ['red', 'bold']
     }
     return (
@@ -30,5 +43,5 @@ useEffect(()=> {
         </div>
     );
 }
-
-export default cockpit;
+//wrap functional compnents that may not need to update with every change in parent component
+export default React.memo(cockpit);
