@@ -19,7 +19,7 @@ class App extends Component {
     showPersons: false,
     showCockpit: true
   }
-
+//hook to be deleted
   static getDerivedStateFromProps(props, state) {
     console.log('[App.js] getDerivedStateFromProps', props)
     return state;
@@ -31,12 +31,12 @@ class App extends Component {
   componentDidMount() {
     console.log('[App.js] componentDidMount');
   }
-
+//hook to be deleted
   shouldComponentUpdate(nextProps, nextState) {
     console.log('[App.js] shouldComponentUpdate');
     return true;
   }
-
+//hook to be deleted
   componentDidUpdate() {
     console.log('[App.js] componentDidUpdate');
   }
